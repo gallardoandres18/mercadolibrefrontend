@@ -1,0 +1,16 @@
+<div class="product">
+    <div class="thumbnail-content">
+        <img [src]="product.thumbnail" alt="">
+    </div>
+    <div class="description-content">
+        <div class="first-row">
+            <h3 class="price">{{ product.price | currency:"":"$":'1.0-0' }}</h3>
+            <p class="state">
+                {{ product.address.state_name }}
+            </p>
+        </div>
+        <div class="second-row">
+            <h2 class="title">{{ product.title }}</h2>
+        </div>
+    </div>
+</div>

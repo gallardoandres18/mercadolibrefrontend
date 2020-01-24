@@ -1,0 +1,51 @@
+@import "./src/assets/scss/variables";
+
+.product {
+    display: grid;
+    grid-template-areas: "thumbnail-content description-content";
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 180px;
+    border-bottom: 1px solid $lightGray;
+    grid-gap: $marginShort;
+    padding-bottom: $marginShort;
+    padding-top: $marginShort;
+
+    .thumbnail-content {
+        grid-area: thumbnail-content;
+        position: relative;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            border-radius: 4px;
+        }
+    }
+    .description-content {
+        grid-area: description-content;
+        color: $black;
+        .first-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: $marginShort;
+            margin-bottom: $marginLarge;
+            .state {
+                font-size: $stateProduct;
+                color: $gray;
+                margin-right: 7em;
+            }
+            .price {
+                font-size: $priceProduct;
+            }
+        }
+        .title {
+            font-size: $titleProduct;
+        }
+        
+    }
+
+}
+

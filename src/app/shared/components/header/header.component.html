@@ -4,9 +4,9 @@
             <img src="./assets/img/logo.png" alt="">
         </div>
         <div class="search-container">
-            <input type="text" placeholder="Nunca dejes de buscar">
+            <input type="text" placeholder="Nunca dejes de buscar" (keyup.enter)="searchProduct()" [(ngModel)]="productText">
             <div class="search-button-container">
-                <img src="./assets/img/search.png" alt="">
+                <img src="./assets/img/search.png" alt="" (click)="searchProduct()">
             </div>
         </div>
     </div>
