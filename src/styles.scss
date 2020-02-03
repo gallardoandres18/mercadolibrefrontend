@@ -85,3 +85,48 @@ input:focus, textarea:focus, select:focus{
     scroll-behavior: auto !important;
   }
 }
+
+
+.loading,
+.without-result {
+  height: calc(100vh - 100px);
+  display: flex;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  i {
+      font-size: 6em;
+      color: $gray;
+  }
+}
+
+.without-result-container {
+  text-align: center;
+  i {
+    margin-bottom: $marginShort;
+  }
+  p {
+    font-size: $titleDescription;
+    color: $black;
+  }
+}
+
+.category {
+  display: flex;
+  li {
+      font-size: 14px;
+      margin-bottom: $marginShort;
+      color: $gray;
+      &:after {
+          content: '>';
+          margin-left: 5px;
+          margin-right: 5px;
+      }
+      &:last-child {
+          font-weight: bold;
+          &:after {
+              content: '';
+          }
+      }
+  }
+}

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.mercadolibre.com/sites/MLA'
+  apiUrl: 'http://localhost:4200/api'
 };

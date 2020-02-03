@@ -3,6 +3,11 @@
 header {
     height: 56px;
     background: $yellow;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    top: 0;
     .wrapper-header {
         height: 100%;
         display: flex;
@@ -10,6 +15,9 @@ header {
         align-items: center;
         .logo-container {
             margin-right: 2em;
+            img {
+                cursor: pointer;
+            }
         }
         .search-container {
             position: relative;

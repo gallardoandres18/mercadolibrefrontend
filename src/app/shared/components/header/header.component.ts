@@ -21,4 +21,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/items'], { queryParams: { search: this.productText } });
   }
 
+  goToHome() {
+    this.router.navigate(['/']);
+  }
+
 }

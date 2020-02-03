@@ -1,16 +1,16 @@
 <div class="product">
     <div class="thumbnail-content">
-        <img [src]="product.thumbnail" alt="">
+        <img [src]="product.picture" alt="" (click)="goToDetail()">
     </div>
     <div class="description-content">
         <div class="first-row">
-            <h3 class="price">{{ product.price | currency:"":"$":'1.0-0' }}</h3>
+            <h3 class="price">{{ product.price.amount | currency:"":"$":'1.0-0' }}</h3>
             <p class="state">
-                {{ product.address.state_name }}
+                {{ product.address.state }}
             </p>
         </div>
         <div class="second-row">
-            <h2 class="title">{{ product.title }}</h2>
+            <h2 class="title" (click)="goToDetail()">{{ product.title }}</h2>
         </div>
     </div>
 </div>
