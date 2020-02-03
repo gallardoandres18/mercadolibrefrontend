@@ -1,0 +1,11 @@
+@import "./src/assets/scss/variables";
+
+.content-list {
+    .list-of-products {
+        background: white;
+        padding: 0 $marginShort;
+        .product {
+            display: block;
+        }
+    }
+}

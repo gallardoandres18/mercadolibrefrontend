@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { PriceProductPipe } from './pipes/price-product.pipe';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    PriceProductPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    PriceProductPipe
+  ],
+  providers: [
+    DecimalPipe
   ]
 })
 export class SharedModule { }

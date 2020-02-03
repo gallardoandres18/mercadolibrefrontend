@@ -1,0 +1,27 @@
+<section class="content-list" *ngIf="!loading; else loadingTemplate">
+    <ng-container *ngIf="!withoutResults && searchList.items.length > 0; else withoutResultsTemplate">
+        <ul class="category">
+            <li *ngFor="let category of searchList.categories">{{ category }}</li>
+        </ul>
+        <section class="list-of-products">
+            <app-product class="product" [product]="product" *ngFor="let product of searchList.items"></app-product>
+        </section>
+    </ng-container>
+    <ng-template #withoutResultsTemplate>
+        <section class="without-result">
+            <div class="without-result-container">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                <p>Sin Resultados</p>
+            </div>
+        </section>
+    </ng-template>
+
+</section>
+
+<ng-template #loadingTemplate>
+    <section class="loading">
+        <div class="spinner-container">
+            <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+        </div>
+    </section>
+</ng-template>

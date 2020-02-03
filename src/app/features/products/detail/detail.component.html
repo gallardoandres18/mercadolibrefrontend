@@ -1,0 +1,53 @@
+<section class="content-list" *ngIf="!loading; else loadingTemplate">
+
+    <ng-container *ngIf="!withoutResults && productDetail; else withoutResultsTemplate">
+        <ul class="category">
+            <li>No estaban</li>
+            <li>en API</li>
+        </ul>
+        <section class="detail">
+            <div class="picture-content">
+                <img [src]="productDetail.item.picture" alt="">
+            </div>
+            <div class="details-content">
+                <div class="header">
+                    {{ productDetail.item.condition === 'new' ? 'Nuevo' : 'Usado' }} -
+                    {{ productDetail.item.sold_quantity }} vendidos
+                </div>
+                <h1>
+                    {{ productDetail.item.title }}
+                </h1>
+                <h3>
+                    {{ productDetail.item.price.amount | currency:"":"$":'1.0-0' }}
+                </h3>
+                <button>
+                    Comprar
+                </button>
+            </div>
+            <div class="description-content">
+                <h3>Descripción del Producto</h3>
+                <p>
+                    {{ productDetail.item.description }}
+                </p>
+            </div>
+        </section>
+    </ng-container>
+    <ng-template #withoutResultsTemplate>
+        <section class="without-result">
+            <div class="without-result-container">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                <p>No se encontró el producto solicitado</p>
+            </div>
+        </section>
+    </ng-template>
+
+
+</section>
+
+<ng-template #loadingTemplate>
+    <section class="loading">
+        <div class="spinner-container">
+            <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+        </div>
+    </section>
+</ng-template>
